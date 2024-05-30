@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>form validastion</title>
+</head>
+<body>
+	<button onclick="one()">date</button>
+	<p id="dd"></p>
+
+	<form>
+		<input type="text" name="" placeholder="enter name" id="name">
+		<p id="named"></p>
+		<input type="text" name="" placeholder="enter name" id="password">
+		<p id="passwordd"></p>
+		<input type="submit" value="submit">
+		<p id="display"></p>
+	</form>
+	<script>
+	
+		addEventListener("submit",(e)=>
+		{
+			e.preventDefault();
+
+			let nameerror=document.getElementById("name");
+			let name=nameerror.value;
+			let passworderror=document.getElementById("password");
+			let password=passworderror.value;
+
+			 if(name==null||name=="")
+			 {
+			 	call("named","entervalidname");
+			 }
+			  if(password==null||password=="")
+			 {
+			 	call("passwordd","entervalidpassword");
+			 }
+
+
+			 let result=`<h1>name:-${name}</h1>`
+
+			 let f=document.getElementById("display")
+
+			 f.innerHTML=result;
+
+		})
+		function call(id,message)
+		{
+			let g=document.getElementById(id)
+			g.textContent=message;
+		}
+	</script>
+</body>
+</html>
